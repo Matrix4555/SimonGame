@@ -1,0 +1,81 @@
+body, h1, h2, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 17px;
+}
+
+body, button {
+    font-family: Calibri;
+}
+
+.game {
+    width: fit-content;
+    margin: 30px auto;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.game-start_btn {
+    font-size: 20px;
+    padding: 5px 15px;
+}
+
+.game-round_and_start {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.game-field {
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.game-button {
+    border: 0;
+    cursor: pointer;
+    transition: opacity .2s;
+}
+
+#red {
+    background-color: red;
+}
+
+#yellow {
+    background-color: gold;
+}
+
+#green {
+    background-color: green;
+}
+
+#blue {
+    background-color: blue;
+}
+
+.lit {
+    opacity: .5;
+}
+
+.game-difficulty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-difficulty-radios {
+    margin-left: 20px;
+}
