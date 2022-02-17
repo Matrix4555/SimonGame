@@ -54,6 +54,7 @@ npm run serve
 - HTML
 - Sass
 - Vue.js
+- Node.js
 
 ## Authors
 
