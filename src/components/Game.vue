@@ -1,4 +1,26 @@
-Vue.component('game', {
+<template>
+    <div class="game">
+        <h1 class="game-header">Саймон</h1>
+        <div class="game-round_and_start">
+            <ButtonStart @start="startOver" :gameIsActive="gameIsActive" :isDisabled="buttonsDisabled" />
+            <Round :counter="round" />
+        </div>
+        <Field :litColor="litColor" @step="makeStep" />
+        <Difficulty @difficulty="changeDifficulty" />
+        <Sound :colors="colorsToSound" />
+    </div>
+</template>
+
+<script>
+import ButtonStart from './ButtonStart.vue';
+import Round from './Round.vue';
+import Field from './Field.vue';
+import Difficulty from './Difficulty.vue';
+import Sound from './Sound.vue';
+
+export default {
+    name: 'SimonGame',
+    components: { ButtonStart, Round, Field, Difficulty, Sound },
     data() {
         return {
             gameIsActive: false,
@@ -9,7 +31,7 @@ Vue.component('game', {
             buttonsDisabled: false,
             litColor: '',
             colorsToSound: []
-        }
+        };
     },
     methods: {
         
@@ -103,18 +125,17 @@ Vue.component('game', {
 
         changeDifficulty(difficulty) {
             switch(difficulty) {
-                case 1:
-                    this.delay = 1500;
-                    break;
-                case 2:
-                    this.delay = 1000;
-                    break;
-                case 3:
-                    this.delay = 400;
-                    break;
+            case 1:
+                this.delay = 1500;
+                break;
+            case 2:
+                this.delay = 1000;
+                break;
+            case 3:
+                this.delay = 400;
+                break;
             }
         }
-
-    },
-    template: gameTemplate
-});
+    }
+};
+</script>
